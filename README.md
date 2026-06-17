@@ -1,2 +1,2 @@
 # ROS2-workshop-NTUST
-create and build ros2 worskspace with robot description packages.
+Create and build A simple 3 DoF manipulator robot description packages.
