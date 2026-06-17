@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <set_parameter name="use_sim_time" value="True" />
+
+  <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="robot_description" 
+           value="$(command 'xacro $(find-pkg-share robo_nemotron_moveit_config)/config/robo_nemotron.urdf.xacro')" 
+           type="str" />
+  </node>
+
+  <node pkg="ros_gz_sim" exec="create" name="robot_spawner" output="screen"
+        args="-topic /robot_description -name robo_nemotron -z 0.0" />
+
+  <node pkg="controller_manager" exec="spawner" name="joint_state_broadcaster_spawner"
+        args="joint_state_broadcaster --controller-manager /controller_manager" output="screen" />
+
+  <node pkg="rviz2" exec="rviz2" name="rviz2" 
+        args="-d $(find-pkg-share robo_nemotron_description)/config/config.rviz" output="screen" />
+</launch>
