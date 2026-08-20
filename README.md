@@ -7,3 +7,7 @@ Create and build A simple 3 DoF manipulator robot description packages.
 ros2 launch robo_nemotron_gazebo spawn_robot.launch.xml
 
 ros2 launch robo_nemotron_gazebo start_simulator.launch.xml 
+
+Project Demo 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ddc10944-97e5-4baf-b1cf-ab441268068e" />
